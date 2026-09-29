@@ -5,10 +5,11 @@ type WorkoutSummaryProps = {
     onCompleteExercise: () => void;
     onAddTime: () => void;
     onResetWorkout: () => void;
+    disableReset: boolean;
 };
 
 function WorkoutSummary({ exercisesCompleted, totalMinutes, status,
-    onCompleteExercise, onAddTime, onResetWorkout }: WorkoutSummaryProps) {
+    onCompleteExercise, onAddTime, onResetWorkout, disableReset }: WorkoutSummaryProps) {
     return (
         <div>
             <h2>Summary</h2>
@@ -18,7 +19,7 @@ function WorkoutSummary({ exercisesCompleted, totalMinutes, status,
 
             <button onClick={onCompleteExercise}>Complete Exercise</button>
             <button onClick={onAddTime}>Add Time</button>
-            <button onClick={onResetWorkout}>Reset Workout</button>
+            <button onClick={onResetWorkout} disabled={disableReset}>Reset Workout</button>
         </div>
 
     );

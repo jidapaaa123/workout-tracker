@@ -48,6 +48,7 @@ function App() {
         onCompleteExercise={completeExercise}
         onAddTime={addTime}
         onResetWorkout={resetWorkout}
+        disableReset={exercisesCompleted === 0 && totalMinutes === 0}
       ></WorkoutSummary>
     </>
   )
